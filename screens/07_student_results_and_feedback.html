@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error-container": "#93000a",
+          "background": "#fef8f3",
+          "on-primary-fixed-variant": "#1f4a6c",
+          "surface-container-highest": "#e7e1dc",
+          "on-tertiary-container": "#4a2d00",
+          "blue-deep": "#789FC6",
+          "on-error": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary": "#ffffff",
+          "on-surface-variant": "#42474e",
+          "secondary-container": "#fdd48e",
+          "surface-dim": "#dfd9d4",
+          "on-secondary-fixed": "#271900",
+          "secondary-fixed": "#ffdea8",
+          "primary-fixed-dim": "#a3caf3",
+          "inverse-primary": "#a3caf3",
+          "surface": "#F8F5F0",
+          "blue-border": "#C6DCEB",
+          "text-secondary": "#777873",
+          "success": "#668B73",
+          "on-primary-container": "#013657",
+          "surface-tint": "#3a6285",
+          "on-surface": "#1d1b18",
+          "gold-primary": "#B99555",
+          "warning": "#B58A4A",
+          "tertiary-fixed": "#ffddb5",
+          "ink": "#272522",
+          "blue-pale": "#DCEAF5",
+          "danger": "#B96D66",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#e7e1dc",
+          "on-tertiary-fixed": "#2a1800",
+          "inverse-on-surface": "#f6f0eb",
+          "primary-fixed": "#cee5ff",
+          "surface-container-low": "#f9f3ed",
+          "surface-container-high": "#ede7e2",
+          "outline": "#72777f",
+          "outline-variant": "#c2c7cf",
+          "on-primary": "#ffffff",
+          "secondary": "#77591f",
+          "surface-bright": "#fef8f3",
+          "on-secondary-container": "#785a20",
+          "gold-soft": "#E5D4AC",
+          "tertiary-fixed-dim": "#f1bd7b",
+          "surface-container": "#f3ede8",
+          "tertiary": "#7d571e",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#e8c17c",
+          "primary": "#3a6285",
+          "border": "#E2DED5",
+          "primary-container": "#789fc6",
+          "surface-soft": "#F2EFE8",
+          "tertiary-container": "#c29355",
+          "on-tertiary-fixed-variant": "#623f07",
+          "inverse-surface": "#32302d",
+          "blue-primary": "#A9C9E8",
+          "on-primary-fixed": "#001d33",
+          "on-tertiary": "#ffffff",
+          "canvas": "#EEECE3",
+          "on-secondary-fixed-variant": "#5d4208",
+          "on-background": "#1d1b18"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter-sm": "1rem",
+          "margin": "2rem",
+          "margin-sm": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["EB Garamond"],
+          "body-md": ["DM Sans"],
+          "title-md": ["DM Sans"],
+          "body-lg": ["DM Sans"],
+          "title-sm": ["DM Sans"],
+          "body-sm": ["DM Sans"],
+          "label-md": ["DM Sans"],
+          "display-lg-mobile": ["EB Garamond"],
+          "headline-sm": ["EB Garamond"],
+          "label-sm": ["DM Sans"],
+          "display-lg": ["EB Garamond"],
+          "headline-lg-mobile": ["EB Garamond"],
+          "headline-lg": ["EB Garamond"]
+        },
+        "fontSize": {
+          "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+          "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "title-md": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "title-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+          "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+          "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+          "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-canvas font-body-md text-ink antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface border-r border-border z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-border/60"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">G</div><span class="font-headline-md text-headline-md tracking-tight text-ink font-semibold">Grade<span class="text-primary">X</span></span></div><span class="text-label-sm font-label-sm px-space-xs py-0.5 rounded bg-blue-pale text-on-primary-container border border-blue-border tracking-wider uppercase">Student</span></div><div class="p-space-md"><span class="text-label-sm font-label-sm text-text-secondary uppercase tracking-wider px-space-sm mb-space-xs block">Academic Space</span><nav class="flex flex-col gap-1" data-active-classes="bg-blue-pale text-ink font-title-sm border border-blue-border"><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-soft hover:text-ink transition-colors font-body-md text-body-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-soft hover:text-ink transition-colors font-body-md text-body-md" data-path="my-assessments" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>My Assessments</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-soft hover:text-ink transition-colors font-body-md text-body-md" data-path="results-and-feedback" href="#"><span class="material-symbols-outlined text-[20px]">check_circle</span><span>Results &amp; Feedback</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-soft hover:text-ink transition-colors font-body-md text-body-md" data-path="learning-progress" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span>Learning Progress</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-soft hover:text-ink transition-colors font-body-md text-body-md" data-path="profile-and-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Profile &amp; Settings</span></a></nav></div></div><div class="p-space-md border-t border-border"><div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-soft border border-border/80"><div class="w-10 h-10 rounded-full bg-blue-deep/20 border border-blue-border flex items-center justify-center text-primary font-title-sm text-title-sm flex-shrink-0">JT</div><div class="flex flex-col min-w-0 flex-1"><span class="text-title-sm font-title-sm text-ink truncate leading-tight">Julian Thorne</span><span class="text-label-sm font-label-sm text-text-secondary truncate mt-0.5">Undergrad • CogSci #STU-8821</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-md border-b border-border z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-text-secondary">school</span><span class="text-label-md font-label-md tracking-normal text-text-secondary">Portal</span><span class="text-border">/</span><span class="text-title-sm font-title-sm text-ink">Student Academic Workspace</span></div><div class="w-96 max-w-md hidden md:flex items-center gap-space-xs bg-surface-soft border border-border px-space-sm py-1.5 rounded-xl focus-within:border-blue-deep focus-within:ring-2 focus-within:ring-blue-deep/20 transition-all"><span class="material-symbols-outlined text-text-secondary text-[18px]">search</span><input class="bg-transparent w-full text-body-sm font-body-sm text-ink placeholder:text-text-secondary outline-none" placeholder="Search assessments, feedback, syllabus concepts..." type="text"></div><div class="flex items-center gap-space-md"><span class="px-space-sm py-1 rounded-full bg-gold-soft/60 text-secondary border border-gold-soft font-label-sm text-label-sm">Fall 2024</span><button class="flex items-center gap-1 text-on-surface-variant hover:text-ink text-label-sm font-label-sm px-space-xs py-1 transition-colors" title="Academic Integrity Guide" type="button"><span class="material-symbols-outlined text-[18px]">policy</span><span class="hidden lg:inline">Integrity Guide</span></button><button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-ink hover:bg-surface-soft transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-warning"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-canvas flex-1"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient glow element within bounds -->
+<div class="relative w-full max-w-[1400px] mx-auto px-space-md lg:px-margin py-space-lg flex flex-col gap-space-lg">
+<!-- Breadcrumb & Top Bar Context -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-label-md font-label-md text-text-secondary">
+<a class="hover:text-ink transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>My Assessments</span>
+</a>
+<span class="text-text-secondary/40">/</span>
+<span class="text-ink font-medium">COG-302</span>
+<span class="text-text-secondary/40">/</span>
+<span class="px-space-xs py-0.5 rounded-full bg-blue-pale text-on-primary-container text-label-sm font-label-sm font-semibold">Results &amp; Feedback</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-label-sm font-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-success">verified</span>
+          Institutional Grade Record #COG302-8821
+        </span>
+</div>
+</div>
+<!-- Page Title & Authority Scrim -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-primary font-semibold">Cognitive Neuroscience • Midterm Assessment</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-ink tracking-tight">
+        Assessment Results &amp; Rubric Feedback
+      </h1>
+<p class="font-body-md text-body-md text-text-secondary flex flex-wrap items-center gap-2 mt-1">
+<span>Verified by <strong class="text-ink font-medium">Prof. Eleanor Vance</strong></span>
+<span class="w-1 h-1 rounded-full bg-border"></span>
+<span class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+          Evaluated with GradeX Academic AI Rubric v4.2
+        </span>
+</p>
+</div>
+<!-- 1. Executive Score & Evaluation Header (Asymmetric Bento Block) -->
+<div class="w-full bg-surface rounded-2xl shadow-sm overflow-hidden"><div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-lg border-b border-border/60 bg-surface"><div class="flex flex-wrap items-baseline gap-space-lg"><div class="flex flex-col"><span class="text-label-sm font-label-sm text-text-secondary uppercase tracking-wider mb-1">Final Grade</span><div class="flex items-baseline gap-2"><span class="font-display-lg text-display-lg text-ink font-semibold tracking-tight">14.5</span><span class="font-headline-sm text-headline-sm text-text-secondary">/ 15.0</span><span class="px-2 py-0.5 rounded-full bg-success/15 text-success font-label-sm font-medium ml-2">96.7% Mastery</span></div></div><div class="h-10 w-px bg-border hidden sm:block"></div><div class="flex flex-col"><span class="text-label-sm font-label-sm text-text-secondary uppercase tracking-wider mb-1">Cohort Comparison</span><div class="flex items-center gap-space-md text-body-md"><span class="text-ink"><strong class="font-semibold">Top 8%</strong> <span class="text-text-secondary text-body-sm font-normal">(Decile 1)</span></span><span class="text-text-secondary">•</span><span class="text-text-secondary text-body-sm">Class Median: <span class="text-ink font-medium">12.5</span></span></div></div></div><div class="flex items-center gap-space-sm"><button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-xl bg-surface-soft hover:bg-canvas text-ink font-title-sm text-body-md transition-colors" id="clarifyBtn" type="button"><span class="material-symbols-outlined text-[18px] text-text-secondary">chat_bubble_outline</span><span>Ask Professor</span></button><button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-xl bg-primary hover:bg-blue-deep text-surface font-title-sm text-body-md shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span>Export PDF</span></button></div></div></div>
+<!-- 2. Two-Column Detailed Review: Student Submission vs. Explainable Rubric -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Student Submitted Response & Interactive Concept Highlighting (7 Cols) -->
+<section class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Prompt Box -->
+<div class="bg-surface rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-md bg-canvas text-ink text-label-sm font-label-sm font-bold">Question 1</span>
+<span class="text-label-sm font-label-sm text-text-secondary">• Long-Form Analytical</span>
+</div>
+<span class="text-label-sm font-label-sm font-semibold text-primary">Weight: 15.0 Marks</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-ink mb-space-xs">
+            Cellular Mechanisms of Hippocampal Plasticity
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant bg-surface-soft p-space-md rounded-xl">
+            "Explain the cellular mechanism of Long-Term Potentiation (LTP) in the CA1 hippocampal region. Detail the pre- and postsynaptic events initiated during high-frequency tetanus, the critical channel gating dependencies, and the intracellular downstream signaling cascades culminating in synaptic strengthening."
+          </p>
+</div>
+<!-- Student Submission Workspace -->
+<div class="bg-surface rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md"><div class="flex items-center justify-between pb-space-sm border-b border-border/60"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-title-sm text-ink">Submitted Response</span><span class="text-text-secondary text-body-sm">• 482 words</span></div><div class="flex items-center gap-space-md text-label-sm"><span class="inline-flex items-center gap-1.5 text-text-secondary"><span class="w-2.5 h-2.5 rounded-full bg-blue-pale border border-blue-border"></span>Full Credit</span><span class="inline-flex items-center gap-1.5 text-text-secondary"><span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>Partial Area</span></div></div><div class="font-body-lg text-body-lg text-ink leading-relaxed flex flex-col gap-space-md font-sans pt-space-xs"><p>In the CA1 subfield of the hippocampus, high-frequency stimulation (tetanic delivery at ~100 Hz) induces sustained Long-Term Potentiation (LTP). Under baseline conditions, low-frequency glutamate release acts predominantly on postsynaptic AMPA receptors. However, upon persistent afferent stimulation from the Schaffer collaterals, repetitive glutamate release triggers massive <mark class="bg-blue-pale/50 text-ink px-1.5 py-0.5 rounded cursor-pointer transition-colors duration-150 hover:bg-blue-pale border-b border-primary/30 inline-flex items-center gap-1" data-target="crit-a">AMPA receptor depolarization</mark>.</p><p>This local positive membrane potential is essential because it repels the electrostatically trapped bivalent cation within the pore of neighboring NMDA channels, achieving the critical <mark class="bg-blue-pale/50 text-ink px-1.5 py-0.5 rounded cursor-pointer transition-colors duration-150 hover:bg-blue-pale border-b border-primary/30 inline-flex items-center gap-1" data-target="crit-a">NMDA Mg2+ block expulsion</mark>. With the voltage-dependent block cleared, the channel permits substantial Calcium (Ca2+) influx into the dendritic spine apparatus.</p><p>Once inside the postsynaptic microdomain, Calcium binds to calmodulin, subsequently activating <mark class="bg-secondary-container/60 text-ink px-1.5 py-0.5 rounded cursor-pointer transition-colors duration-150 hover:bg-secondary-container border-b border-warning/40 inline-flex items-center gap-1" data-target="crit-b">calmodulin-dependent protein kinase II (CaMKII)</mark>. CaMKII translocates toward the postsynaptic density where it phosphorylates substrates to enhance synaptic responsiveness and increase the total conductance state of AMPA channels.</p><p>Furthermore, downstream activation of neuronal nitric oxide synthase (nNOS) stimulates the synthesis and retrograde transport of gaseous messengers. Through <mark class="bg-blue-pale/50 text-ink px-1.5 py-0.5 rounded cursor-pointer transition-colors duration-150 hover:bg-blue-pale border-b border-primary/30 inline-flex items-center gap-1" data-target="crit-c">Nitric Oxide (NO) retrograde diffusion</mark> back across the synaptic cleft into the presynaptic terminal, soluble guanylyl cyclase is engaged, elevating presynaptic vesicle pool turnover and ensuring enhanced transmitter release probability for subsequent action potentials.</p></div><div class="pt-space-xs text-body-sm text-text-secondary flex items-center justify-between border-t border-border/40"><span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-text-secondary">info</span>Select highlighted phrases to review rubric alignment</span><span>Submitted Oct 22, 2024 via Canvas</span></div></div>
+</section>
+<!-- Right Column: Explainable Rubric Breakdown (5 Cols) -->
+<section class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">grading</span>
+<h3 class="font-headline-sm text-headline-sm text-ink">Rubric Breakdown</h3>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary font-medium">3 Calibrated Criteria</span>
+</div>
+<!-- Criterion A -->
+<article class="bg-surface rounded-2xl p-space-lg shadow-sm transition-all duration-300" id="crit-a"><div class="flex items-start justify-between gap-space-sm mb-space-xs"><div><span class="text-label-sm font-label-sm uppercase tracking-wider text-text-secondary block mb-1">Criterion A</span><h4 class="font-title-sm text-title-sm text-ink font-semibold">Receptor Channel Kinetics &amp; Mg2+ Extrusion</h4></div><div class="text-right flex-shrink-0"><span class="font-title-sm text-title-sm text-ink font-bold">5.0</span><span class="text-body-sm text-text-secondary"> / 5.0</span></div></div><p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">Accurately articulated baseline AMPA-mediated sodium influx and voltage-dependent expulsion of Mg2+ plug. Logical sequence from glutamate binding to pore clearance is exceptionally clear.</p><div class="mt-space-sm pt-space-xs flex items-center justify-between text-body-sm text-text-secondary"><span class="text-success font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span>Full Marks Awarded</span><span class="text-text-secondary text-label-sm font-label-sm">Validated by Prof. Vance</span></div></article>
+<!-- Criterion B (Minor Deduction Area) -->
+<article class="bg-surface rounded-2xl p-space-lg shadow-sm transition-all duration-300" id="crit-b"><div class="flex items-start justify-between gap-space-sm mb-space-xs"><div><span class="text-label-sm font-label-sm uppercase tracking-wider text-text-secondary block mb-1">Criterion B</span><h4 class="font-title-sm text-title-sm text-ink font-semibold">Secondary Messenger Cascades &amp; CaMKII Activation</h4></div><div class="text-right flex-shrink-0"><span class="font-title-sm text-title-sm text-warning font-bold">4.5</span><span class="text-body-sm text-text-secondary"> / 5.0</span></div></div><p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">Clear understanding of Ca2+ flux and kinase recruitment, but lacked explicit detail on structural autophosphorylation (Thr286)-driven AMPA insertion into the postsynaptic density.</p><div class="mt-space-sm p-space-sm rounded-xl bg-gold-soft/30 text-body-sm text-on-secondary-container leading-relaxed flex items-start gap-2"><span class="material-symbols-outlined text-[18px] text-warning flex-shrink-0 mt-0.5">lightbulb</span><span><strong>Next Step:</strong> Connect Thr286 autophosphorylation directly with GluA1 exocytosis and PSD-95 scaffold stabilization to capture full credit in final exams.</span></div><div class="mt-space-sm pt-space-xs flex items-center justify-between text-body-sm text-text-secondary"><span class="text-warning font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">remove_circle_outline</span>Minor Deduction (-0.5)</span><span class="text-text-secondary text-label-sm font-label-sm">Validated by Prof. Vance</span></div></article>
+<!-- Criterion C -->
+<article class="bg-surface rounded-2xl p-space-lg shadow-sm transition-all duration-300" id="crit-c"><div class="flex items-start justify-between gap-space-sm mb-space-xs"><div><span class="text-label-sm font-label-sm uppercase tracking-wider text-text-secondary block mb-1">Criterion C</span><h4 class="font-title-sm text-title-sm text-ink font-semibold">Retrograde Messenger Signaling</h4></div><div class="text-right flex-shrink-0"><span class="font-title-sm text-title-sm text-ink font-bold">5.0</span><span class="text-body-sm text-text-secondary"> / 5.0</span></div></div><p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">Precise formulation of presynaptic vesicle exocytosis facilitation via nitric oxide. Excellent integration of gaseous diffusion dynamics without confounding vesicular release.</p><div class="mt-space-sm pt-space-xs flex items-center justify-between text-body-sm text-text-secondary"><span class="text-success font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span>Full Marks Awarded</span><span class="text-text-secondary text-label-sm font-label-sm">Validated by Prof. Vance</span></div></article>
+</section>
+</div>
+<!-- 3. Formative AI Improvement Plan & Personalized Next Steps -->
+<section class="w-full bg-surface rounded-2xl p-space-lg shadow-sm"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-border/60"><div><h3 class="font-headline-sm text-headline-sm text-ink">Personalized Recommendations</h3><p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Targeted focus areas prepared from your rubric evaluation for COG-302.</p></div><span class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-soft text-text-secondary self-start sm:self-auto">Honors Track</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-md"><div class="p-space-md rounded-xl bg-surface-soft flex flex-col justify-between"><div class="flex flex-col gap-1.5"><div class="flex items-center gap-1.5 text-success"><span class="material-symbols-outlined text-[18px]">verified</span><span class="font-title-sm text-title-sm font-semibold">Demonstrated Strength</span></div><p class="font-body-md text-body-md text-ink font-medium mt-1">Electrophysiological Step Ordering</p><p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Your explanation of the temporal sequence between AMPA depolarization and NMDA opening ranked in the top 3% of the cohort.</p></div><span class="text-label-sm font-label-sm text-success font-medium mt-space-sm">Mastered Competency</span></div><div class="p-space-md rounded-xl bg-surface-soft flex flex-col justify-between"><div class="flex flex-col gap-1.5"><div class="flex items-center gap-1.5 text-warning"><span class="material-symbols-outlined text-[18px]">trending_up</span><span class="font-title-sm text-title-sm font-semibold">Final Exam Focus</span></div><p class="font-body-md text-body-md text-ink font-medium mt-1">Postsynaptic Density (PSD-95) Anchoring Kinetics</p><p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">Review TARPs interactions with PSD-95 scaffolding to immobilize AMPARs during late-phase LTP consolidation.</p></div><div class="mt-space-sm flex items-center justify-between pt-space-xs"><span class="text-label-sm font-label-sm text-text-secondary">Module 4.2 Material</span><button class="text-primary hover:text-ink font-title-sm text-label-md flex items-center gap-1 transition-colors" type="button"><span>Review Module</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></button></div></div></div></section>
+<!-- 4. Transparency Safeguard & Archival Integrity -->
+
+</div>
+</div>
+<!-- Inline JavaScript for Highlighting Micro-Interactions -->
+<script>
+  document.querySelectorAll('mark[data-target]').forEach(highlight => {
+    highlight.addEventListener('click', () => {
+      const targetId = highlight.getAttribute('data-target');
+      const targetCard = document.getElementById(targetId);
+      if (targetCard) {
+        // Highlight active rubric block
+        document.querySelectorAll('article[id^="crit-"]').forEach(c => {
+          c.classList.remove('bg-blue-pale/30', 'scale-[1.01]');
+        });
+        targetCard.classList.add('bg-blue-pale/30', 'scale-[1.01]');
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        setTimeout(() => {
+          targetCard.classList.remove('scale-[1.01]');
+        }, 1200);
+      }
+    });
+  });
+
+  const clarifyBtn = document.getElementById('clarifyBtn');
+  if (clarifyBtn) {
+    clarifyBtn.addEventListener('click', () => {
+      alert("A direct inquiry channel with Prof. Eleanor Vance for Assessment 'COG-302 Midterm' has been opened. Julian Thorne (#STU-8821).");
+    });
+  }
+</script></main></div>
+
+</body></html>

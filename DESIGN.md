@@ -1,7 +1,7 @@
-# DESIGN.md — GradeX
+# DESIGN.md — GradeWise AI
 ## Google Stitch Design System & Website Direction
 
-> **Product:** GradeX  
+> **Product:** GradeWise AI  
 > **Domain:** Education  
 > **Problem Statement:** Automated Formative Assessment and Intelligent Subjective Grading Assistant  
 > **Platform:** Responsive web application  
@@ -11,7 +11,7 @@
 
 ## 1. Product Design Goal
 
-Design GradeX as a premium, trustworthy, human-centred AI assessment platform that helps faculty evaluate subjective answers consistently and efficiently while giving students useful, explainable feedback.
+Design GradeWise AI as a premium, trustworthy, human-centred AI assessment platform that helps faculty evaluate subjective answers consistently and efficiently while giving students useful, explainable feedback.
 
 The product should feel like a refined modern SaaS platform—not a conventional school ERP, not a generic admin template, and not a chatbot.
 
@@ -20,7 +20,7 @@ The product should feel like a refined modern SaaS platform—not a conventional
 1. Faculty creates an assessment.
 2. Faculty adds questions, reference answers and a marking rubric.
 3. Students submit typed answers or supported digital documents.
-4. GradeX evaluates answers against the rubric, awards concept-wise marks and generates feedback.
+4. GradeWise AI evaluates answers against the rubric, awards concept-wise marks and generates feedback.
 5. Low-confidence or unusual evaluations are flagged for faculty review.
 6. Faculty reviews, edits or overrides marks and publishes results.
 7. Students view marks, feedback and areas to improve.
@@ -221,7 +221,7 @@ Use a persistent left sidebar with:
 
 Sidebar design:
 - Warm ivory or cream surface.
-- GradeX wordmark at the top.
+- GradeWise AI wordmark at the top.
 - Simple outline icons.
 - Active item uses a pale-blue rounded background and dark text.
 - Keep labels visible on desktop.
@@ -612,7 +612,7 @@ Always distinguish:
 
 ## 17. Final Instructions for Google Stitch
 
-Generate a complete, cohesive, responsive **GradeX web application** using this design system.
+Generate a complete, cohesive, responsive **GradeWise AI web application** using this design system.
 
 Prioritise these screens for the first implementation:
 1. Faculty dashboard.

@@ -22,6 +22,11 @@ uploads/
 *.sqlite
 *.sqlite3
 
+# Node.js
+node_modules/
+dist/
+npm-debug.log*
+
 # IDE and OS files
 .vscode/
 .idea/
