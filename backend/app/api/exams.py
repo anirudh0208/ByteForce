@@ -85,17 +85,35 @@ def create_exam(
     return exam
 
 
+def _serialize_exam(exam: Examination, is_student: bool) -> ExamResponse:
+    """Serialize an Examination, hiding answer keys from students."""
+    resp = ExamResponse.model_validate(exam)
+    if is_student:
+        for q in resp.questions:
+            q.answer_key = None
+    return resp
+
+
+def _serialize_question(question: Question, is_student: bool) -> QuestionResponse:
+    """Serialize a Question, hiding answer_key from students."""
+    resp = QuestionResponse.model_validate(question)
+    if is_student:
+        resp.answer_key = None
+    return resp
+
+
 @router.get("", response_model=List[ExamResponse])
 def list_exams(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
     q = db.query(Examination)
+    is_student = current_user.role == "student"
     if current_user.role == "teacher":
         q = q.filter(Examination.created_by_id == current_user.id)
     else:
         q = q.filter(Examination.is_published == True)
-    return q.all()
+    return [_serialize_exam(exam, is_student) for exam in q.all()]
 
 
 @router.get("/{exam_id}", response_model=ExamResponse)
@@ -107,9 +125,10 @@ def get_exam(
     exam = db.query(Examination).filter(Examination.id == exam_id).first()
     if not exam:
         raise HTTPException(404, detail="Exam not found")
-    if current_user.role == "student" and not exam.is_published:
+    is_student = current_user.role == "student"
+    if is_student and not exam.is_published:
         raise HTTPException(403, detail="Exam not yet published")
-    return exam
+    return _serialize_exam(exam, is_student)
 
 
 @router.put("/{exam_id}", response_model=ExamResponse)
@@ -173,10 +192,19 @@ def add_question(
 def list_questions(
     exam_id: str,
     db: Session = Depends(get_db),
-    _: User = Depends(get_current_user),
+    current_user: User = Depends(get_current_user),
 ):
     exam = db.query(Examination).filter(Examination.id == exam_id).first()
     if not exam:
         raise HTTPException(404, detail="Exam not found")
-    return db.query(Question).filter(Question.exam_id == exam_id).order_by(Question.order).all()
+    is_student = current_user.role == "student"
+    if is_student and not exam.is_published:
+        raise HTTPException(403, detail="Exam not yet published")
+    questions = (
+        db.query(Question)
+        .filter(Question.exam_id == exam_id)
+        .order_by(Question.order)
+        .all()
+    )
+    return [_serialize_question(q, is_student) for q in questions]
 

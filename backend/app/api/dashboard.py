@@ -107,6 +107,33 @@ def teacher_dashboard(
         and not s.evaluation.is_approved
     )
 
+    # Subject-wise performance across all subjects
+    teacher_exams = db.query(Examination).filter(
+        Examination.created_by_id == teacher.id
+    ).all()
+    all_subjects = db.query(Subject).all()
+    subject_performance = []
+    for subj in all_subjects:
+        subj_exam_ids = {e.id for e in teacher_exams if e.subject_id == subj.id}
+        subj_evals = [
+            s.evaluation for s in answer_sheets
+            if s.exam_id in subj_exam_ids
+            and s.evaluation is not None
+            and s.evaluation.percentage is not None
+        ]
+        avg_pct = (
+            round(sum(ev.percentage for ev in subj_evals) / len(subj_evals), 2)
+            if subj_evals else None
+        )
+        subject_performance.append({
+            "subject_id": subj.id,
+            "subject_name": subj.name,
+            "subject_code": subj.code,
+            "exam_count": len(subj_exam_ids),
+            "evaluated_count": len(subj_evals),
+            "average_percentage": avg_pct,
+        })
+
     return {
         "total_students": total_students,
         "total_exams": total_exams,
@@ -117,7 +144,7 @@ def teacher_dashboard(
         "published": published,
         "average_class_marks": avg_marks,
         "recent_exams": recent_exam_data,
-        "subject_performance": [],   # extended analytics placeholder
+        "subject_performance": subject_performance,
         "low_confidence_count": low_conf_count,
     }
 

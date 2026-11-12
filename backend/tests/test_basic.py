@@ -246,8 +246,10 @@ def test_full_evaluation_workflow():
     assert r_batch.status_code == 200
     assert len(r_batch.json()["answer_sheets"]) == 1
 
-    # 6. Trigger evaluation (runs synchronously inside TestClient BackgroundTasks)
-    r_eval = client.post(f"/api/evaluate/{sheet_id}", headers=headers)
+    # 6. Trigger evaluation (runs deterministically with mock model in unit tests)
+    from unittest.mock import patch
+    with patch("app.services.ai_evaluation_service._get_gemini_model", return_value=None):
+        r_eval = client.post(f"/api/evaluate/{sheet_id}", headers=headers)
     assert r_eval.status_code == 200
 
     # 7. Check evaluation status

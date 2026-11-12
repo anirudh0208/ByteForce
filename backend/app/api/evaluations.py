@@ -17,13 +17,19 @@ router = APIRouter(prefix="/api/evaluate", tags=["Evaluation"])
 
 
 def _run_full_pipeline(answer_sheet_id: str, get_db_fn):
-    """Background task: OCR → AI evaluation with its own DB session."""
+    """Background task: OCR (if needed) -> AI evaluation with its own DB session."""
     gen = get_db_fn()
     db = next(gen)
     try:
-        ocr_result = ResultService.run_ocr(db, answer_sheet_id)
-        if ocr_result["success"]:
+        sheet = db.query(AnswerSheet).filter(AnswerSheet.id == answer_sheet_id).first()
+        if not sheet:
+            return
+        if sheet.evaluation_status in (EvaluationStatus.ocr_complete, EvaluationStatus.ai_failed):
             ResultService.run_ai_evaluation(db, answer_sheet_id)
+        else:
+            ocr_result = ResultService.run_ocr(db, answer_sheet_id)
+            if ocr_result["success"]:
+                ResultService.run_ai_evaluation(db, answer_sheet_id)
     finally:
         try:
             next(gen)

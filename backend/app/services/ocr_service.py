@@ -160,9 +160,9 @@ def _segment_by_questions(full_text: str, num_questions: int) -> dict[int, str]:
     if not full_text.strip():
         return {i + 1: "" for i in range(num_questions)}
 
-    # Build flexible regex for question headers
+    # Build flexible regex for question headers (consumes trailing punctuation like '.', ':', ')', '-')
     pattern = re.compile(
-        r'(?:^|\n)\s*(?:Q(?:uestion)?\.?\s*(\d+)|(\d+)\s*[.):]\s)',
+        r'(?:^|\n)\s*(?:Q(?:uestion)?\.?\s*(\d+)\s*[.):\-]?|(\d+)\s*[.):\-])\s*',
         re.IGNORECASE | re.MULTILINE
     )
     matches = list(pattern.finditer(full_text))

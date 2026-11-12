@@ -170,6 +170,10 @@ def _parse_gemini_response(raw: str, max_marks: float) -> dict:
     return data
 
 
+class GeminiEvaluationError(RuntimeError):
+    """Raised when Gemini evaluation fails after bounded retries."""
+
+
 class AIEvaluationService:
 
     @staticmethod
@@ -179,18 +183,24 @@ class AIEvaluationService:
         model_answer: str,
         max_marks: float,
         rubric: Optional[list] = None,
-        retries: int = 2,
+        retries: Optional[int] = None,
+        timeout: Optional[int] = None,
     ) -> dict:
         """
         Evaluate a single student answer using Gemini.
 
         Returns a validated dict with marks, confidence, rubric_breakdown
-        and feedback. Includes '_is_mock': True when using the mock evaluator.
+        and feedback. Includes '_is_mock': True only when GEMINI_API_KEY is
+        not configured. Raises GeminiEvaluationError if Gemini fails after
+        bounded retries (never fabricates marks on API failure).
         """
         model = _get_gemini_model()
 
         if model is None:
             return _mock_evaluate(question_text, student_answer, max_marks, rubric)
+
+        max_retries = settings.GEMINI_MAX_RETRIES if retries is None else retries
+        req_timeout = settings.GEMINI_TIMEOUT_SECONDS if timeout is None else timeout
 
         prompt = EVAL_PROMPT_TEMPLATE.format(
             question_text=question_text,
@@ -201,23 +211,22 @@ class AIEvaluationService:
         )
 
         last_error = None
-        for attempt in range(retries + 1):
+        for attempt in range(max_retries + 1):
             try:
-                response = model.generate_content(prompt)
+                response = model.generate_content(
+                    prompt,
+                    request_options={"timeout": req_timeout, "retry": None},
+                )
                 raw = response.text
                 return _parse_gemini_response(raw, max_marks)
             except Exception as e:
                 last_error = e
-                logger.warning(f"Gemini attempt {attempt + 1} failed: {e}")
-                if attempt < retries:
-                    time.sleep(2 ** attempt)  # exponential back-off
+                logger.warning(f"Gemini attempt {attempt + 1}/{max_retries + 1} failed: {e}")
+                if attempt < max_retries:
+                    time.sleep(min(2 ** attempt, 4))  # bounded exponential back-off
 
-        # All retries exhausted — fall back to mock with error note
-        logger.error(f"All Gemini retries failed: {last_error}")
-        result = _mock_evaluate(question_text, student_answer, max_marks, rubric)
-        result["_gemini_error"] = str(last_error)
-        result["_is_mock"] = True
-        return result
+        logger.error(f"All Gemini retries exhausted: {last_error}")
+        raise GeminiEvaluationError(f"Gemini evaluation failed after {max_retries + 1} attempts: {last_error}")
 
     @staticmethod
     def evaluate_full_sheet(

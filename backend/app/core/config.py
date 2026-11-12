@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     # Google Gemini
     GEMINI_API_KEY: str = ""
     GEMINI_MODEL: str = "gemini-3.8-flash"
+    GEMINI_TIMEOUT_SECONDS: int = 20
+    GEMINI_MAX_RETRIES: int = 2
 
     # OCR
     TESSERACT_CMD: str = ""

@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy import or_
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -98,7 +99,9 @@ def get_student(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    student = db.query(Student).filter(Student.id == student_id).first()
+    student = db.query(Student).filter(
+        or_(Student.id == student_id, Student.student_id == student_id)
+    ).first()
     if not student:
         raise HTTPException(404, detail="Student not found")
 
@@ -117,7 +120,9 @@ def update_student(
     db: Session = Depends(get_db),
     _: User = Depends(require_teacher),
 ):
-    student = db.query(Student).filter(Student.id == student_id).first()
+    student = db.query(Student).filter(
+        or_(Student.id == student_id, Student.student_id == student_id)
+    ).first()
     if not student:
         raise HTTPException(404, detail="Student not found")
 
