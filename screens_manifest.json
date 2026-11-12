@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "id": "389fc7437a844d05a4033e2b2a5619c6",
+    "title": "Create Assessment & Rubric",
+    "html_file": "screens/01_create_assessment_and_rubric.html",
+    "image_file": "screens/01_create_assessment_and_rubric.jpg",
+    "resolution": "2560x4646",
+    "mime_type": "image/jpeg"
+  },
+  {
+    "index": 2,
+    "id": "71d9c4c10e6c4fd38b98ae34deaad9ca",
+    "title": "Submissions & Bulk Upload",
+    "html_file": "screens/02_submissions_and_bulk_upload.html",
+    "image_file": "screens/02_submissions_and_bulk_upload.jpg",
+    "resolution": "2560x3284",
+    "mime_type": "image/jpeg"
+  },
+  {
+    "index": 3,
+    "id": "eb5c819419f3498889571ba465e8b19e",
+    "title": "Faculty Dashboard",
+    "html_file": "screens/03_faculty_dashboard.html",
+    "image_file": "screens/03_faculty_dashboard.jpg",
+    "resolution": "2560x4960",
+    "mime_type": "image/jpeg"
+  },
+  {
+    "index": 4,
+    "id": "956bc2972b234d6e89ce054956aefe7a",
+    "title": "AI Grading Workspace",
+    "html_file": "screens/04_ai_grading_workspace.html",
+    "image_file": "screens/04_ai_grading_workspace.png",
+    "resolution": "NonexNone",
+    "mime_type": "image/png"
+  },
+  {
+    "index": 5,
+    "id": "b81f5843c2ff4d29a74896c28db6fee3",
+    "title": "Student Dashboard",
+    "html_file": "screens/05_student_dashboard.html",
+    "image_file": "screens/05_student_dashboard.png",
+    "resolution": "NonexNone",
+    "mime_type": "image/png"
+  },
+  {
+    "index": 6,
+    "id": "58bdb30da78049b7abce90b4a5680fba",
+    "title": "Faculty Review Queue",
+    "html_file": "screens/06_faculty_review_queue.html",
+    "image_file": "screens/06_faculty_review_queue.png",
+    "resolution": "NonexNone",
+    "mime_type": "image/png"
+  },
+  {
+    "index": 7,
+    "id": "1b0f04f536b745589f9be226a499dfaa",
+    "title": "Student Results & Feedback",
+    "html_file": "screens/07_student_results_and_feedback.html",
+    "image_file": "screens/07_student_results_and_feedback.png",
+    "resolution": "NonexNone",
+    "mime_type": "image/png"
+  },
+  {
+    "index": 8,
+    "id": "7e86565f69c14671a24be6702f96c4ec",
+    "title": "Results & Analytics",
+    "html_file": "screens/08_results_and_analytics.html",
+    "image_file": "screens/08_results_and_analytics.png",
+    "resolution": "NonexNone",
+    "mime_type": "image/png"
+  }
+]
